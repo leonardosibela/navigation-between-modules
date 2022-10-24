@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/first_module_nav_graph"
+    app:startDestination="@id/FirstModuleFirstFragment">
+
+    <fragment
+        android:id="@+id/FirstModuleFirstFragment"
+        android:name="com.sibela.firstmodule.FirstModuleFirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first_module_first">
+
+        <action
+            android:id="@+id/action_FistModuleFirstFragment_to_FirstModuleSecondFragment"
+            app:destination="@id/FirstModuleSecondFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/FirstModuleSecondFragment"
+        android:name="com.sibela.firstmodule.FirstModuleSecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_first_module_second">
+
+        <action
+            android:id="@+id/action_FistModuleSecondFragment_to_FirstModuleFirstFragment"
+            app:destination="@id/FirstModuleFirstFragment" />
+    </fragment>
+</navigation>

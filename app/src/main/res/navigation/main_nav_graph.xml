@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <include app:graph="@navigation/first_module_nav_graph" />
+    <include app:graph="@navigation/second_module_nav_graph" />
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.sibela.navigationbetweenmodules.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_second_module_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.sibela.navigationbetweenmodules.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second_module_second">
+
+        <action
+            android:id="@+id/action_MainModuleFirstFragment_to_MainModuleFirstFragment"
+            app:destination="@id/FirstFragment" />
+
+        <action
+            android:id="@+id/action_MainModuleFirstFragment_to_FirstModuleFirstFragment"
+            app:destination="@id/first_module_nav_graph" />
+
+        <action
+            android:id="@+id/action_MainModuleFirstFragment_to_SecondModuleFirstFragment"
+            app:destination="@id/second_module_nav_graph" />
+
+    </fragment>
+</navigation>
