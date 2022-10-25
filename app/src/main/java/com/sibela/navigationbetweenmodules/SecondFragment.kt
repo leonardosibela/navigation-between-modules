@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.sibela.firstmodule.startFirstModule
 import com.sibela.navigationbetweenmodules.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
@@ -38,6 +39,7 @@ class SecondFragment : Fragment() {
     }
 
     private fun onGoToFirstModuleClicked() {
+        startFirstModule()
         findNavController().navigate(R.id.action_MainModuleFirstFragment_to_FirstModuleFirstFragment)
     }
 
